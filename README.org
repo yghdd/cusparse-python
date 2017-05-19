@@ -1,0 +1,1 @@
+This is a Python interface to the sparse matrix vector multiplication functionality of NVIDIA's cuSPARSE library.
