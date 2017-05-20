@@ -109,7 +109,7 @@ def cusparseDcsrmv(handle: ctypes.c_int, transA: cusparseOperation, m: int,
                    float, y: gpuarray.GPUArray):
     alpha_ = ctypes.c_double(alpha)
     beta_ = ctypes.c_double(beta)
-    status = libcusparse.cusparseDcsrmv(handle, 0, m, n, nnz,
+    status = libcusparse.cusparseDcsrmv(handle, transA, m, n, nnz,
                                         ctypes.byref(alpha_), descrA,
                                         csrValA.ptr, csrRowPtrA.ptr,
                                         csrColIndA.ptr, x.ptr,
