@@ -9,7 +9,7 @@ __all__ = ['cusparseCreate', 'cusparseDestroy', 'cusparseGetVersion',
 
 import ctypes
 import ctypes.util
-from enum import Enum
+from enum import IntEnum
 
 import pycuda.autoinit          # noqa
 import pycuda.gpuarray as gpuarray
@@ -42,7 +42,7 @@ libcusparse.cusparseDcsrmv.argtypes = [ctypes.c_int, ctypes.c_int,
                                        ctypes.c_void_p]
 
 
-class cusparseOperation(Enum):
+class cusparseOperation(IntEnum):
     CUSPARSE_OPERATION_NON_TRANSPOSE = 0
     CUSPARSE_OPERATION_TRANSPOSE = 1
     CUSPARSE_OPERATION_CONJUGATE_TRANSPOSE = 2
